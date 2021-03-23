@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'questions/q.svg' %}" />
+    <title>Test Bank</title>
+    <link rel="stylesheet" href="{% static 'questions/q_style.css' %}">
+  </head>
+  <body>
+    <div class="q_container">
+      <ol class="question">
+      {% for question in questions %}
+        <li>
+          <h2>{{ question.question }}</h2>
+          <ol class="answer">
+            <li
+            {% if question.answer == 'A' %}
+            style="color:green"
+            {% endif %}
+            >{{ question.A }}</li>
+            <li
+            {% if question.answer == 'B' %}
+            style="color:green"
+            {% endif %}
+            >{{ question.B }}</li>
+            <li
+            {% if question.answer == 'C' %}
+            style="color:green"
+            {% endif %}
+            >{{ question.C }}</li>
+            <li
+            {% if question.answer == 'D' %}
+            style="color:green"
+            {% endif %}
+            >{{ question.D }}</li>
+          </ol>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </body>
+</html>

